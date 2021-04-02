@@ -2,3 +2,30 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "ananke"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "Home"
+    name = "Home"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/"
+    weight = -30
+
+  [[menu.main]]
+    name = "HomeCloud"
+    post = "<span class='alert'>New!</span>"
+    pre = "<i class='fa fa-road'></i>"
+    url = "/categories/homecloud/"
+    weight = -10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/about/"
+    weight = -1

@@ -1,0 +1,47 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns nested-copy-line-height nested-img">
+
+  {{ if eq .Title "HomeCloud" }}
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      <h1 class="flex-none">
+        What is the HomeCloud?
+      </h1>
+      <p>HomeCloud is a cluster of raspberry pi servers that come together ot manage your home network. Follow the series
+        below to set one in your home that can block nasty ads,
+        force safe search, play minecraft, and a lot more - limited only by your imagination! The cluster is based on K3s,
+        so there's that to learn too.</p>
+      <p>Remember to follow the posts from the beginning!</p>
+    </div>
+  {{ end }}
+
+  {{ if eq .Title "Comics" }}
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      <h1 class="flex-none">
+        Science Comics
+      </h1>
+      <p>The stories behind some of the greatest scientific experiments...since the beginning of the scientific revolution. Comics for the qurious mind.</p>
+    </div>
+  {{ end }}
+
+  {{ if eq .Title "Experiments" }}
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      <h1 class="flex-none">
+        Hands-on Experiment
+      </h1>
+      <p>Said Confucious - I do, I learn. Hands on experiments to learn how nature *really* works.</p>
+    </div>
+  {{ end }}
+
+  <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+    {{- .Content -}}
+  </section>
+  <section class="flex-ns flex-wrap justify-around mt5">
+    {{ range .Paginator.Pages }}
+    <div class="relative w-100 w-30-l mb4 bg-white">
+      {{- partial "summary.html" . -}}
+    </div>
+    {{ end }}
+  </section>
+  {{- template "_internal/pagination.html" . -}}
+</article>
+{{ end }}
