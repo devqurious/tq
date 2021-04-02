@@ -1,6 +1,6 @@
 baseURL = "http://techqurious.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Techqurious"
 theme = "ananke"
 
 [taxonomies]
