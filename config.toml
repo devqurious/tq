@@ -2,6 +2,7 @@ baseURL = "http://techqurious.com/"
 languageCode = "en-us"
 title = "Techqurious"
 theme = "ananke"
+googleAnalytics = "UA-193648113-1"
 
 [taxonomies]
     tag = "tags"
