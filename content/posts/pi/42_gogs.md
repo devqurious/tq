@@ -30,6 +30,10 @@ spec:
       storage: 5Gi
 ```
 
+```
+sudo kubectl apply -f longhorn-volv-gogs-pvc.yml -n gogs
+```
+
 # Step 2: Create the deployment
 
 Note the name of the image we will pull from docker hub; it is gogs-rpi. Also note that we attach the volume claim we created above to the container. The (longhorn) volume is mounted on /data in the container. The container listens on two ports. Port 22 for SSH based access to git, and port 3000 for HTTP based access to git.  

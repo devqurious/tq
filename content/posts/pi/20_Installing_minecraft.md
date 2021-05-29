@@ -10,6 +10,8 @@ categories: ["HomeCloud"]
 
 Adding the world's most popular video game to the k3s cluster seems like a good idea. There are a couple of posts that guide us in this endeavour - [this](https://www.jeffgeerling.com/blog/2020/raspberry-pi-cluster-episode-4-minecraft-pi-hole-grafana-and-more ) and [this](https://github.com/itzg/minecraft-server-charts/tree/master/charts/minecraft). 
 
+And [this](https://github.com/itzg/minecraft-server-charts/blob/master/charts/minecraft/values.yaml) and [this](https://github.com/itzg/minecraft-server-charts)
+
 Prepare the repo.
 
 ```
@@ -27,7 +29,7 @@ sudo kubectl create namespace minecraft
 Configure the server. Create a new file called [minecraft.yml](https://github.com/devqurious/homecloud/blob/main/yml/minecraft/minecraft.yml) and place in the default values. If you want to have a safe environment, set the difficulty to peaceful (*not* easy as there are zombies in the easy mode too), and gameMode to creative. 
 
 ```
-helm install --namespace minecraft --generate-name -f minecraft.yml itzg/minecraft
+helm install --namespace minecraft minecraft -f minecraft.yml itzg/minecraft
 ```
 
 Once it starts running, find the pod name and tail the logs...
@@ -76,6 +78,63 @@ Check the helm charts installed:
 helm ls -n minecraft
 ```
 
+## Updating the values
 
+If you need to change some of the values in values.yml, do so and then run the following command to update the chart.
 
+```
+helm upgrade -f minecraft.yml minecraft itzg/minecraft -n minecraft
+```
 
+## Adding persistence
+
+It sucks if you build things and all of it is gone once the pod restarts. To add persistence, follow the steps below. A prerequisite is [this post](/posts/pi/35_Longhorn_storage.md/) where we setup a shared storage for all the pods in the cluster. 
+
+### Create the persistent volume claim
+
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: longhorn-volv-minecraft-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 1Gi
+```
+
+```
+sudo kubectl apply -f longhorn-volv-minecraft-pvc.yml -n minecraft
+```
+
+### Update minecraft.yml
+
+```
+persistence:
+  annotations: {}
+  ## minecraft data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: "longhorn"
+  dataDir:
+    # Set this to false if you don't care to persist state between restarts.
+    enabled: true
+    existingClaim: "longhorn-volv-minecraft-pvc"
+    Size: 1Gi
+
+```
+
+### Run the upgrade command
+
+```
+helm upgrade --namespace minecraft minecraft -f minecraft.yml itzg/minecraft
+```
+
+And voila - your minecraft now has persistence!
