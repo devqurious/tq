@@ -179,3 +179,7 @@ In all cases, you need to make sure you are able to ping wwww.google.com from th
 ## If you are deploying pihole in a cluster...
 
 Remember to do these commands on the node where the main pihole container is being installed... (use the -o wide command to find that out.)
+
+## References:
+https://levelup.gitconnected.com/a-guide-to-k3s-ingress-using-traefik-with-nodeport-6eb29add0b4b
+https://medium.com/@geraldcroes/kubernetes-traefik-101-when-simplicity-matters-957eeede2cf8

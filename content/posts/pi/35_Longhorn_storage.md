@@ -42,6 +42,23 @@ ssh -L 9999:localhost:8002 ubuntu@newton
 
 Finally, enjoy the dashboard at http://localhost:9999/#/dashboard.
 
+## Data corruption
+
+Due to an un-graceful shutdown, or other reasons, your volume can get corrupted. When this happens, the container that depends on this volume will fail to start. Viewing the logs for that container, will show an error like so:
+
+```
+Warning  FailedMount  26m (x3 over 42m)     kubelet  Unable to attach or mount volumes: unmounted volumes=[config], unattached volumes=[default-token-pzfww config custom-dnsmasq]: timed out waiting for the condition
+/dev/longhorn/pvc-dcaa9f25-03e1-432d-af6d-c3b85820e0e6: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY.
+```
+
+Is'nt that beautiful - an error, and a solution side by side. So log into the node where the volume exists, and run the following command (change the vol locations to whatever matches for your setup.
+
+```
+sudo fsck -cvf /dev/longhorn/pvc-dcaa9f25-03e1-432d-af6d-c3b85820e0e6 <- You can get this path from the longhorn dashboard.
+```
+
+And in no time, your container should be up and running. 
+
 ## Important note
 
 Installing longhorn causes two default storage classes to be created, as mentioned here: https://github.com/civo/kube100/issues/12. 
