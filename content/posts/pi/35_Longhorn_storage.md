@@ -66,7 +66,19 @@ The fix is in the link above ...
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
+## Volume corruption
 
+A longhorn volume can get corrupted, like any other type of volume. This usually happens due to an unclean shutdown. If this happens, then the pods that are using that pvc volume will fail to start and the container will be stuck in "ContainerCreating." To find out which volume is corrupted, run the `describe pod` command which will tell you the name of the volume. 
+
+Then, from the longhorn UI find out which node is attached to the volume and ssh into that node. Then run the fsck command (withtout the -a option) to manually fix all the errors. (Press a to accept all as yes)
+
+For example:
+
+```
+sudo fsck /dev/longhorn/pvc-dcaa9f25-03e1-432d-af6d-c3b85820e0e6
+```
+
+Now restart the container, and the container should come up just fine!
 
 
 

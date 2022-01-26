@@ -138,3 +138,23 @@ helm upgrade --namespace minecraft minecraft -f minecraft.yml itzg/minecraft
 ```
 
 And voila - your minecraft now has persistence!
+
+### Use Nodeport 
+
+Exposing the service as a nodeport will eliminate the need to manually port-forward and greatly improve the reliability of your server. You little clients will thank you for that. Doing this requires that you have understood [this](posts/pi/25_vip/) post which describes how to attach a load balancer in front of your cluster. Assuming you have done all that, it is now easy to configure a NodePort service for your minecraft server. 
+
+Just modify the minecraft.yml to match the following:
+
+```
+serviceType: NodePort
+  ## Set the port used if the serviceType is NodePort
+  nodePort: 30333
+  # Set the external port of the service, usefull when using the LoadBalancer service type
+  servicePort: 25565
+  loadBalancerIP: 172.16.16.16
+
+```
+
+### Multiplayer for the world
+
+You can extend the minecraft server to anyone on the internet using [ngrok](www.ngrok.io). First, create a free account. Then [follow the instructions](https://dashboard.ngrok.com/get-started/setup) to run the ngrok binary on any machine outside the cluster. 
