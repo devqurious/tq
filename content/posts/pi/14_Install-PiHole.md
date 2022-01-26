@@ -112,7 +112,34 @@ Now you should be able to open the wonderful web UI of pihole by navigating to [
 
 ![](/images/pi/pi_home.png)
 
-*Important Note*
+### The w(hole) picture
+
+Now a lot of resources were installed in this post. It helps to have a mental model of all the various moving parts of the pihole deployment.
+
+![](/images/pi/pihole_overview.jpg)
+
+```
+sudo kubectl get ing -A
+```
+
+At the entrance of the cluster is the Traefik reverse proxy. Any client that wants to get into the cluster basically connects to this reverse proxy, and it is this reverse proxy that then connects back to the actual application - in this case, the pihole app. 
+
+How does Traefik know where to route? In the spec rules, and in this case, it uses the path prefix (/pihole) to forward the request to the pihole service. 
+
+```
+sudo kubectl get svc - A
+```
+
+Why service? Well, there could be multiple pihole pods, and it would not who to forward the request to. Instead, it knows there is one service pod that is responsible for all requests to /pihole. This service, then, is the one that receives the requests. But how does it know which pihole pod to send the request to? 
+
+```
+sudo kubectl get pod -A
+```
+
+The service uses the app selector, which is part of it's configuration, to find out the pihole pod it needs to send the request to. If there are mutliple pods, it will distribute the requests evenly across them. Finally the pihole web application receives the request when it reaches the pihole pod. And that's how an admin see the pihole web administration page.
+
+
+### The DNS issue
 
 Check if pihole is actually running or not by running the following command:
 

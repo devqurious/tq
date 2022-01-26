@@ -119,7 +119,17 @@ Reboot and watch the cluster form automatically. You're well on your way to HA!
 
 ## Troubleshooting
 
-Sometimes it's worth cleaning up completely and trying again. To clean up:
+Sometimes it's worth cleaning up completely and trying again. Warning: This will remove all container pods you may have created
+
+```
+sudo rm -rf /var/lib/rancher/k3s/
+```
+
+After this, try starting k3s manually from the command line and check for errors. If all is well, you should see all the three nodes go into a healthy state. 
+
+
+Of you can go one level deeper and un-install k3s to start from the beginning. 
+
 
 ```
 sudo /usr/local/bin/k3s-uninstall.sh
