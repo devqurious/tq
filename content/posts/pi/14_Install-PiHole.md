@@ -138,6 +138,29 @@ sudo kubectl get pod -A
 
 The service uses the app selector, which is part of it's configuration, to find out the pihole pod it needs to send the request to. If there are mutliple pods, it will distribute the requests evenly across them. Finally the pihole web application receives the request when it reaches the pihole pod. And that's how an admin see the pihole web administration page.
 
+### Upgrading Pihole
+
+New bad domains pop up all the time, and luckily PiHole [updates it's list of bad domains automatically]
+9https://discourse.pi-hole.net/t/does-pi-hole-keep-the-lists-updated/13224), once a week (I think). You can see the last updated timestamp on the Dashboards page by hovering on the "Blocked Domains" panel. You can update this manually too, by clicking on "Tools | Update Gravity."
+
+From time to time, you might of course want to update Pihole app itself. To do so, first check the version you have:
+
+```
+sudo helm -n pihole list
+NAME  	NAMESPACE	REVISION	UPDATED                                	STATUS  	CHART        	APP VERSION
+pihole	pihole   	1       	2022-01-26 12:40:33.399618712 +0000 UTC	deployed	pihole-1.8.22	5.2    
+```
+
+Now, run the upgrade.To find out the latest version go to the [homepage](https://artifacthub.io/packages/helm/mojo2600/pihole) of the repo. Currently, the latest version is 2.5.4.
+
+```
+helm upgrade --version 2.5.4 pihole mojo2600/pihole -n pihole
+NAME  	NAMESPACE	REVISION	UPDATED                                	STATUS  	CHART       	APP VERSION
+pihole	pihole   	2       	2022-01-29 05:32:52.867983149 +0000 UTC	deployed	pihole-2.5.4	2021.10.1  
+```
+
+And voila, just like that, you're on the latest version.
+
 
 ### The DNS issue
 
