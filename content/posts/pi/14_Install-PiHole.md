@@ -116,6 +116,10 @@ Now you should be able to open the wonderful web UI of pihole by navigating to [
 
 Now a lot of resources were installed in this post. It helps to have a mental model of all the various moving parts of the pihole deployment.
 
+##### Web UI
+
+This is how the web UI is accessible. 
+
 ![](/images/pi/pihole_overview.jpg)
 
 ```
@@ -137,6 +141,12 @@ sudo kubectl get pod -A
 ```
 
 The service uses the app selector, which is part of it's configuration, to find out the pihole pod it needs to send the request to. If there are mutliple pods, it will distribute the requests evenly across them. Finally the pihole web application receives the request when it reaches the pihole pod. And that's how an admin see the pihole web administration page.
+
+##### DNS
+
+This is how the DNS requests are handled by PiHole. The services that handle DNS requests are of type "Load Balancer", which is a good thing. Should one PiHole app terminate unexpectedly, the service load balancers can continue to forward to PiHole apps in another node. 
+
+![PiHoleServices](https://embed.creately.com/Tf69zXI6swy?type=svg)
 
 ### Upgrading Pihole
 
@@ -161,9 +171,6 @@ pihole	pihole   	2       	2022-01-29 05:32:52.867983149 +0000 UTC	deployed	pihol
 
 And voila, just like that, you're on the latest version.
 
-Test:
-
-![Example image](https://embed.creately.com/w8MaxnnCPjZ?type=svg)
 
 ### The DNS issue
 
