@@ -161,7 +161,9 @@ pihole	pihole   	2       	2022-01-29 05:32:52.867983149 +0000 UTC	deployed	pihol
 
 And voila, just like that, you're on the latest version.
 
-<img src="https://embed.creately.com/w8MaxnnCPjZ?type=svg">
+Test:
+
+![Example image](https://embed.creately.com/w8MaxnnCPjZ?type=svg)
 
 ### The DNS issue
 
