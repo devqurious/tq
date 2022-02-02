@@ -32,6 +32,12 @@ Configure the server. Create a new file called [minecraft.yml](https://github.co
 helm install --namespace minecraft minecraft -f minecraft.yml itzg/minecraft
 ```
 
+At this point your pod will be in "Pending" state. This is because the persistent volume claim is not created yet. Go ahead and create it:
+
+```
+sudo kubectl apply -f longhorn-volv-minecraft-pvc.yml -n minecraft
+```
+
 Once it starts running, find the pod name and tail the logs...
 
 ```
