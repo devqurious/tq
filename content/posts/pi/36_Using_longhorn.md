@@ -14,7 +14,7 @@ Now that we have setup [Longhorn](/posts/pi/35_longhorn_storage/) it's time to [
 
 - It's the job of the developer now to submit a persistent volume claim when building the application.
 
-You can execute the first part from the dashboard using the "Create Volume" button, or if you want, use a manifest. Note the replica count - 
+You can execute the first part from the dashboard using the "Create Volume" button, or if you want, use a manifest. Set the replica count to 2, and the access mode to "ReadWriteOnce". The latter means (I think) the volume can only be mounted once by a node, which is generally what we want.
 
 For the second part, the manifest is below. This is a request for 20GB of persistent storage for the rsync app. (You can create this from the dashboard too!)
 
