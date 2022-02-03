@@ -1,7 +1,7 @@
 ---
 title: "Part 4: Configure IP address"
 date: 2020-12-07T08:10:51+05:30
-thumb_image: "/images/pi/ip.png"
+thumb_image: "/posts/attachments/ip.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

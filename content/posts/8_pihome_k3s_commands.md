@@ -1,7 +1,7 @@
 ---
 title: "Part 8: Kubectl"
 date: 2020-12-11T08:10:51+05:30
-thumb_image: "/images/pi/controller.jpg"
+thumb_image: "/posts/attachments/controller.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

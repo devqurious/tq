@@ -1,7 +1,7 @@
 ---
 title: "Part 9: Hello World"
 date: 2020-12-12T08:10:51+05:30
-thumb_image: "/images/pi/hello-world.png"
+thumb_image: "/posts/attachments/hello-world.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

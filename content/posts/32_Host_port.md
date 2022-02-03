@@ -1,7 +1,7 @@
 ---
 title: "Part 32: Exposing a service using host ports"
 date: 2021-01-04T12:10:51+05:30
-thumb_image: "/images/pi/hostport.jpg"
+thumb_image: "/posts/attachments/hostport.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

@@ -1,7 +1,7 @@
 ---
 title: "Part 38: Kubectl cheat sheet"
 date: 2021-01-10T12:10:51+05:30
-thumb_image: "/images/pi/kubectl.jpg"
+thumb_image: "/posts/attachments/kubectl.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

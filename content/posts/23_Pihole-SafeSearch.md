@@ -1,7 +1,7 @@
 ---
 title: "Part 23: Safe search"
 date: 2020-12-26T12:10:51+05:30
-thumb_image: "/images/pi/safe_search.png"
+thumb_image: "/posts/attachments/safe_search.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

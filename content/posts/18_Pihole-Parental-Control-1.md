@@ -1,7 +1,7 @@
 ---
 title: "Part 18: Pihole Parental Control - 1"
 date: 2020-12-21T12:10:51+05:30
-thumb_image: "/images/pi/parental-control.png"
+thumb_image: "/posts/attachments/parental-control.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

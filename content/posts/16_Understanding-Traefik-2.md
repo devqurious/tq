@@ -1,7 +1,7 @@
 ---
 title: "Part 16: Traefik - The Dashboard (2)"
 date: 2020-12-19T12:10:51+05:30
-thumb_image: "/images/pi/traefik-post.png"
+thumb_image: "/posts/attachments/traefik-post.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

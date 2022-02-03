@@ -1,7 +1,7 @@
 ---
 title: "Part 5: Configure the hostname"
 date: 2020-12-08T08:10:51+05:30
-thumb_image: "/images/pi/DNS.png"
+thumb_image: "/posts/attachments/DNS.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

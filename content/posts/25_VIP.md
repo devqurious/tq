@@ -1,7 +1,7 @@
 ---
 title: "Part 25: Configuring a VIP (DNAT)"
 date: 2020-12-28T12:10:51+05:30
-thumb_image: "/images/pi/dnat.png"
+thumb_image: "/posts/attachments/dnat.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

@@ -1,7 +1,7 @@
 ---
 title: "Part 1: The Home Cloud"
 date: 2020-12-02T08:10:51+05:30
-thumb_image: "/images/pi/UnboxingPi.jpg"
+thumb_image: "/posts/attachments/UnboxingPi.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud"]

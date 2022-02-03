@@ -1,7 +1,7 @@
 ---
 title: "Part 21: Running commands"
 date: 2020-12-24T12:10:51+05:30
-thumb_image: "/images/pi/exec_command.png"
+thumb_image: "/posts/attachments/exec_command.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

@@ -1,7 +1,7 @@
 ---
 title: "Part 34: Environment variables"
 date: 2021-01-06T12:10:51+05:30
-thumb_image: "/images/pi/env.jpg"
+thumb_image: "/posts/attachments/env.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

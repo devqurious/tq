@@ -1,7 +1,7 @@
 ---
 title: "Part 30: Hello Docker + K3s"
 date: 2021-01-02T12:10:51+05:30
-thumb_image: "/images/pi/moby.png"
+thumb_image: "/posts/attachments/moby.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

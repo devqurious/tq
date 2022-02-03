@@ -1,7 +1,7 @@
 ---
 title: "Part 6: Configure passwordless SSH"
 date: 2020-12-09T08:10:51+05:30
-thumb_image: "/images/pi/password.jpg"
+thumb_image: "/posts/attachments/password.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

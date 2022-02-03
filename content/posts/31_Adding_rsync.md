@@ -1,7 +1,7 @@
 ---
 title: "Part 31: Adding rsync to a container"
 date: 2021-01-03T12:10:51+05:30
-thumb_image: "/images/pi/rsync_container.png"
+thumb_image: "/posts/attachments/rsync_container.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

@@ -1,7 +1,7 @@
 ---
 title: "Part 42: Gogs"
 date: 2021-02-06T12:10:51+05:30
-thumb_image: "/images/pi/gogs_logo.jpg"
+thumb_image: "/posts/attachments/gogs_logo.jpg"
 omit_header_text: true
 draft: false
 tags: ["git", "gogs"]

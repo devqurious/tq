@@ -1,7 +1,7 @@
 ---
 title: "Part 12: CrashBackOff!"
 date: 2020-12-15T11:10:51+05:30
-thumb_image: "/images/pi/Error.png"
+thumb_image: "/posts/attachments/Error.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

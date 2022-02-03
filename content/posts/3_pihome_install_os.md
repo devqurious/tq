@@ -1,7 +1,7 @@
 ---
 title: "Part 3: Installing the the OS"
 date: 2020-12-06T08:10:51+05:30
-thumb_image: "/images/pi/Ubuntu.jpg"
+thumb_image: "/posts/attachments/Ubuntu.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

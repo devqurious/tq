@@ -1,7 +1,7 @@
 ---
 title: "Part 2: Lay of the land"
 date: 2020-12-05T08:10:51+05:30
-thumb_image: "/images/pi/HomeCloud.png"
+thumb_image: "/posts/attachments/HomeCloud.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud"]

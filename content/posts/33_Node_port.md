@@ -1,7 +1,7 @@
 ---
 title: "Part 33: Exposing a service using NodePort"
 date: 2021-01-05T12:10:51+05:30
-thumb_image: "/images/pi/nodeport.jpg"
+thumb_image: "/posts/attachments/nodeport.jpg"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

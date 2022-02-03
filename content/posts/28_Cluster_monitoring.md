@@ -1,7 +1,7 @@
 ---
 title: "Part 28: Monitoring the cluster"
 date: 2020-12-31T12:10:51+05:30
-thumb_image: "/images/pi/grafana.png"
+thumb_image: "/posts/attachments/grafana.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

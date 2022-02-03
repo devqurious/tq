@@ -1,7 +1,7 @@
 ---
 title: "Part 37: Using SSD"
 date: 2021-01-09T12:10:51+05:30
-thumb_image: "/images/pi/ssd.png"
+thumb_image: "/posts/attachments/ssd.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

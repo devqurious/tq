@@ -1,7 +1,7 @@
 ---
 title: "Part 22: Monitoring with cron"
 date: 2020-12-25T12:10:51+05:30
-thumb_image: "/images/pi/Monitoring_Minecraft.png"
+thumb_image: "/posts/attachments/Monitoring_Minecraft.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

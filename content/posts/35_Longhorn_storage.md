@@ -1,7 +1,7 @@
 ---
 title: "Part 35: Longhorn storage"
 date: 2021-01-07T12:10:51+05:30
-thumb_image: "/images/pi/longhorn_dashboard.png"
+thumb_image: "/posts/attachments/longhorn_dashboard.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

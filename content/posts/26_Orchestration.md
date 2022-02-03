@@ -1,7 +1,7 @@
 ---
 title: "Part 26: Orchestrations"
 date: 2020-12-29T12:10:51+05:30
-thumb_image: "/images/pi/iamk3s.png"
+thumb_image: "/posts/attachments/iamk3s.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]

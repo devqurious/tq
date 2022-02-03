@@ -1,7 +1,7 @@
 ---
 title: "Part 41: SSL"
 date: 2021-02-05T12:10:51+05:30
-thumb_image: "/images/pi/lets-encrypt.png"
+thumb_image: "/posts/attachments/lets-encrypt.png"
 omit_header_text: true
 draft: false
 tags: ["letsencrypt", "ssl"]

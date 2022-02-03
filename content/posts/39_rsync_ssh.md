@@ -1,7 +1,7 @@
 ---
 title: "Part 39: Longhorn Rsync"
 date: 2021-02-01T12:10:51+05:30
-thumb_image: "/images/pi/lsync.jpg"
+thumb_image: "/posts/attachments/lsync.jpg"
 omit_header_text: true
 draft: false
 tags: ["backup", "rsync"]

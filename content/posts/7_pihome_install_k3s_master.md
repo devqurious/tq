@@ -1,7 +1,7 @@
 ---
 title: "Part 7: Install K3s on master node"
 date: 2020-12-10T08:10:51+05:30
-thumb_image: "/images/pi/K3s.png"
+thumb_image: "/posts/attachments/K3s.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]
