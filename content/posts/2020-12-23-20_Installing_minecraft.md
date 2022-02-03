@@ -1,7 +1,7 @@
 ---
 title: "Part 20: Minecraft"
-date: 2020-12-23T12:10:51+05:30
-thumb_image: "/images/pi/minecraft.png"
+date: 2020-12-23
+thumb_image: "/posts/attachments/minecraft.png"
 omit_header_text: true
 draft: false
 tags: ["homecloud", "computers"]
@@ -62,7 +62,9 @@ Now if you `telnet [IPAddressOfPi]:25565` you should see a response. You're now 
 
 Download the [Minecraft launcher](https://www.minecraft.net/en-us). Yes, you need to sign in using a Microsoft account. Yes, you need to pay 26 bucks to play the game. Yes, if you intend to play multiplayer, you have to pay 26 bucks for each player. Once you have paid it, you can see the following screen (when you click on Multiplayer - this is NOT visible when you're in demo mode). 
 
-![minecraft-server](/images/pi/minecraft-server.png)
+
+![](/posts/attachments/minecraft-server.png)
+
 
 Login, and play!
 
