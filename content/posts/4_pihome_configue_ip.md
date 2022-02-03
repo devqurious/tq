@@ -10,7 +10,7 @@ categories: ["HomeCloud"]
 
 By default, the OS will assign a DHCP IP address to the node. But dynamically changing IP addresses are not a good idea when it comes to servers. To provide a static IP address, we need to do two things. 
 
-![](/images/pi/dhcp_range.png)
+![](/posts/attachments/dhcp_range.png)
 
 First, ensure that the static IP address is outside the range used by the DHCP server. 
 

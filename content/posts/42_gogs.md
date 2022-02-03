@@ -189,7 +189,7 @@ gogs-ingress   <none>   *       172.16.17.253   80      2d3h
 
 If all the resources are up and running correctly, then it's time to hit the following URL: http://dtstudios.in/gogs, or http://dtstudios.in:30130. This will display the following page. Gogs supports postgres and sqlite, I chose to the latter for simplicity. 
 
-![](/images/pi/gogs.png)
+![](/posts/attachments/gogs.png)
 
 # Step 7: Using Gogs
 
@@ -209,7 +209,7 @@ From then on, use git as usual... adding, committing, and pushing your changes t
 
 To view the web interface of gogs, enter https://dtstudios.in/gogs
 
-![](/images/pi/gogs_web.png)
+![](/posts/attachments/gogs_web.png)
 
 Perfect.O!
 

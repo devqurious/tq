@@ -20,7 +20,7 @@ We will deploy the nginx app, a web server that will return a page that has one 
 
 When all this is complete, you can simply open the application in any browser, on any device in the network by simply poining to [http://newton](http://newton) where *newton* resolves the IP address to your pi. Your pi is now at work.
 
-![](/images/pi/hello-world-3.png)
+![](/posts/attachments/hello-world-3.png)
 
 The entire process is explained beautifully [here](https://www.youtube.com/watch?v=QcC-5fRhsM8) and [written here](https://carpie.net/articles/ingressing-with-k3s). But newer versions of K3s have rendered some parts of the yml inaccurate. 
 

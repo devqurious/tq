@@ -12,11 +12,11 @@ Most Pi's run off SDCards. They are fast, cheap but can be unreliable. SDCards w
 
 You need a SSD drive like the one below. 
 
-![](/images/pi/ssd.png)
+![](/posts/attachments/ssd.png)
 
 Then you need a SATA to USB adapter cable like the one below.
 
-![](/images/pi/adapter.png)
+![](/posts/attachments/adapter.png)
 
 Now there are two things to keep in mind when configuring your pi's to boot from SSD drive.
 

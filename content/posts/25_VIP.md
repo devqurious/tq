@@ -12,7 +12,7 @@ We [now have three K3s masters](/posts/pi/24_cluster-1/) up an running on three 
 
 Time to now change the network architecture again. This is how it now looks like. 
 
-![](/images/pi/home_cloud_network.png)
+![](/posts/attachments/home_cloud_network.png)
 
 The three nodes in the cluster (newton, coppernicus, and galileo) have now been placed in a separate network called DMZ. This is 172.16.17.x network. 
 
@@ -20,7 +20,7 @@ The wireless devices (clients that will use the application) have been "bridged"
 
 Setting a DNAT rule that will translate HTTP/DNS traffic coming from the clients TO the destination gateway IP (https://172.16.16.16)...that single destination will be translated to three destinations in a round robin manner. 
 
-![](/images/pi/NAT_rule.png)
+![](/posts/attachments/NAT_rule.png)
 
 (In the picture above, the translated DNAT called Scientists is a list of the IP addresses of...well the scientists). Note the load balancing method as round robin - this is fine for our cluster as all the nodes will sync their state using the embedded etcd cluster we setup in the last post. 
 

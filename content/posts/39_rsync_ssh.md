@@ -40,7 +40,7 @@ exit 0
 
 Depending on how much you sync, your cluster nodes could spin up for quite a bit. 
 
-![](/images/pi/longhorn_rsync.jpg)
+![](/posts/attachments/longhorn_rsync.jpg)
 
 The rsync command has a couple of cool things. For example, the IP address 172.16.16.16 is the IP address of the load balancer, acting as the virtual IP of the cluster. Port 30037 is a node port, which means it exists on every node in the cluster, and that's how the SSH command is able to work. But that's not all. It's the job of Rancher here to make sure that any packets destined for this port, are automatically forwarded to port 22 which is inside the rsync pod, which could be running on any one of the three nodes in the cluster - maybe on Galileo, maybe on Newton. It does not stop there - once the rsync starts, it copies the source directory to mounted volume (/data) which itself is a longhorn volume - and there are two replicas of the data in this volume - all _that_ is managed by Longhorn itself...which it achieves using it's "volume as a service" design (it's containers manage the replication).
 

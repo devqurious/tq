@@ -167,8 +167,8 @@ ingress.networking.k8s.io/pihole-ingress created
 
 ## Open the browser and check
 
-![](/images/pi/le_prod.png)
-![](/images/pi/le_prod_details.png)
+![](/posts/attachments/le_prod.png)
+![](/posts/attachments/le_prod_details.png)
 
 
 ## Troubleshooting

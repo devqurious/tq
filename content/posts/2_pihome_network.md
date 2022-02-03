@@ -8,7 +8,7 @@ tags: ["homecloud"]
 categories: ["HomeCloud"]
 ---
 
-![](/images/pi/HomeCloud.png)
+![](/posts/attachments/HomeCloud.png)
 
 It's a good idea to visualize where the cloud will sit among other things. We will start with one RPi box as the master. It will be controlled by a Macbook Pro - yes, there are no absolute masters in life. :)
 
@@ -20,4 +20,4 @@ Onward!
 
 NOTE: As things progressed, it [became evident](/posts/pi/18_pihole-parental-control-1) that the better place to place the Pi was in the wifi network itself, for better monitoring and device discovery. So the network was modified to the following:
 
-![](/images/pi/HomeCloud-v2.png)
+![](/posts/attachments/HomeCloud-v2.png)

@@ -52,7 +52,7 @@ docker buildx build --platform linux/arm64 --tag drathaqm/home_sync --load .
 
 The image is now in your local repo. You can now run it from the UI and ensure that it runs correctly.
 
-![](/images/pi/docker_local_repo.png)
+![](/posts/attachments/docker_local_repo.png)
 
 Now push to the remote repo. The command is almost the same as the one before. (You can 'Push to Hub' from the UI too)
 

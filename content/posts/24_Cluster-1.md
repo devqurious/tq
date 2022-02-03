@@ -20,7 +20,7 @@ We have only one master node, and if that were to go down, our minecraft gamers 
 
 # Prepare the pies
 
-![](/images/pi/IMG_6442.JPG)
+![](/posts/attachments/IMG_6442.JPG)
 
 Let's restart with 3 pi's this time. [Install the OS](/posts/pi/3_pihome_install_os/) and configure them all with three static IP addresses.Then, [install K3s](/posts/pi/7_pihome_install_k3s_master/) on all the nodes.
 

@@ -24,4 +24,4 @@ k3s: {
 
 Now, watch the grafana in all it's glory. The default username/password is admin/admin.
 
-![](/images/pi/grafana.png)
+![](/posts/attachments/grafana.png)

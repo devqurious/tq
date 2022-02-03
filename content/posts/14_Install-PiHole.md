@@ -110,7 +110,7 @@ sudo kubectl apply -f pihole-web.yml -n pihole
 
 Now you should be able to open the wonderful web UI of pihole by navigating to [http://newton/pihole/admin/](http://newton/pihole/admin/). 
 
-![](/images/pi/pi_home.png)
+![](/posts/attachments/pi_home.png)
 
 ### The w(hole) picture
 
@@ -120,7 +120,7 @@ Now a lot of resources were installed in this post. It helps to have a mental mo
 
 This is how the web UI is accessible. 
 
-![](/images/pi/pihole_overview.jpg)
+![](/posts/attachments/pihole_overview.jpg)
 
 ```
 sudo kubectl get ing -A
