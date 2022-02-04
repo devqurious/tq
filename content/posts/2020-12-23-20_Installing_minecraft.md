@@ -8,6 +8,8 @@ tags: ["homecloud", "computers"]
 categories: ["HomeCloud"]
 ---
 
+## Installing
+
 Adding the world's most popular video game to the k3s cluster seems like a good idea. There are a couple of posts that guide us in this endeavour - [this](https://www.jeffgeerling.com/blog/2020/raspberry-pi-cluster-episode-4-minecraft-pi-hole-grafana-and-more ) and [this](https://github.com/itzg/minecraft-server-charts/tree/master/charts/minecraft). 
 
 And [this](https://github.com/itzg/minecraft-server-charts/blob/master/charts/minecraft/values.yaml) and [this](https://github.com/itzg/minecraft-server-charts)
@@ -86,7 +88,7 @@ Check the helm charts installed:
 helm ls -n minecraft
 ```
 
-## Updating the values
+## Updating
 
 If you need to change some of the values in values.yml, do so and then run the following command to update the chart.
 
@@ -147,7 +149,49 @@ helm upgrade --namespace minecraft minecraft -f minecraft.yml itzg/minecraft
 
 And voila - your minecraft now has persistence!
 
-### Use Nodeport 
+## Node affinity
+
+The longhorn volume we used for persistence is a "ReadWriteOnce", which means only one node (newton, copernicus, or galileo) can mount it. If you try to spin up another instance of the minecraft server on another node, then the new instance will fail. 
+
+Try this. Scale it back to 0, and then scale up to 3. Only one instance will come up, the others will be stuck in pending. 
+
+```
+sudo kubectl scale --replicas=1 deployment/minecraft-minecraft -n minecraft
+```
+
+On restart, if K8s orchestrator brings up the minecraft server on any of the three servers, we will not know which one to connect to. Also, connecting to the external VIP (XG) won't work, as XG will forward request to the cluster, and requests will fail two out of three times. 
+
+The solution is to "stick" the pod to a given node. This can be done quite easily by updating the values for the helm chart. 
+
+#### Step 1: Find node label
+
+```
+sudo kubectl get nodes --show-labels
+```
+
+The output is an eye chart, but notice the label...
+
+```
+newton Ready control-plane,etcd,master 8d v1.20.2+k3s1 beta.kubernetes.io/arch=arm64,beta.kubernetes.io/instance-type=k3s,beta.kubernetes.io/os=linux,k3s.io/hostname=newton,k3s.io/internal-ip=172.16.16.254,kubernetes.io/arch=arm64,kubernetes.io/hostname=newton,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=true,node-role.kubernetes.io/etcd=true,node-role.kubernetes.io/master=true,node.kubernetes.io/instance-type=k3s,type=primary
+```
+
+The label `kubernetes.io/hostname=newton` is the one we need.
+
+#### Step 2: Set the node selector
+
+Open up the values XML and add the following:
+
+```
+nodeSelector: {"k3s.io/hostname" : "newton"}
+```
+
+Run the upgrade commands as shown above.
+
+#### Step 3: Verify
+
+Scale the deployment to 0 and 1, and notice that the new pod always now come up on newton all the time. You can now happily connect to the IP of newton when trying to access the minecraft server.
+
+## Use Nodeport 
 
 Exposing the service as a nodeport will eliminate the need to manually port-forward and greatly improve the reliability of your server. You little clients will thank you for that. Doing this requires that you have understood [this](posts/pi/25_vip/) post which describes how to attach a load balancer in front of your cluster. Assuming you have done all that, it is now easy to configure a NodePort service for your minecraft server. 
 
@@ -163,6 +207,9 @@ serviceType: NodePort
 
 ```
 
-### Multiplayer for the world
+## Multiplayer for the world
 
 You can extend the minecraft server to anyone on the internet using [ngrok](www.ngrok.io). First, create a free account. Then [follow the instructions](https://dashboard.ngrok.com/get-started/setup) to run the ngrok binary on any machine outside the cluster. 
+
+
+
