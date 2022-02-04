@@ -98,7 +98,7 @@ helm upgrade -f minecraft.yml minecraft itzg/minecraft -n minecraft
 
 ## Adding persistence
 
-It sucks if you build things and all of it is gone once the pod restarts. To add persistence, follow the steps below. A prerequisite is [this post](/posts/pi/35_Longhorn_storage.md/) where we setup a shared storage for all the pods in the cluster. 
+It sucks if you build things and all of it is gone once the pod restarts. To add persistence, follow the steps below. A prerequisite is [longhorn storage](/posts/35_longhorn_storage) where we setup a shared storage for all the pods in the cluster. 
 
 ### Create the persistent volume claim
 
@@ -193,7 +193,7 @@ Scale the deployment to 0 and 1, and notice that the new pod always now come up 
 
 ## Use Nodeport 
 
-Exposing the service as a nodeport will eliminate the need to manually port-forward and greatly improve the reliability of your server. You little clients will thank you for that. Doing this requires that you have understood [this](posts/pi/25_vip/) post which describes how to attach a load balancer in front of your cluster. Assuming you have done all that, it is now easy to configure a NodePort service for your minecraft server. 
+Exposing the service as a nodeport will eliminate the need to manually port-forward and greatly improve the reliability of your server. You little clients will thank you for that. Doing this requires that you have understood [this](/posts/25_vip) post which describes how to attach a load balancer in front of your cluster. Assuming you have done all that, it is now easy to configure a NodePort service for your minecraft server. 
 
 Just modify the minecraft.yml to match the following:
 
@@ -206,6 +206,8 @@ serviceType: NodePort
   loadBalancerIP: 172.16.16.16
 
 ```
+
+Now you can access the server on the node port of 30333.
 
 ## Multiplayer for the world
 
