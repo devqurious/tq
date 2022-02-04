@@ -4,7 +4,7 @@ date: 2020-12-23
 thumb_image: "/posts/attachments/minecraft.png"
 omit_header_text: true
 draft: false
-tags: ["homecloud", "computers"]
+tags: ["ngrok", "minecraft"]
 categories: ["HomeCloud"]
 ---
 
@@ -209,9 +209,23 @@ serviceType: NodePort
 
 Now you can access the server on the node port of 30333.
 
+      
+
 ## Multiplayer for the world
 
-You can extend the minecraft server to anyone on the internet using [ngrok](www.ngrok.io). First, create a free account. Then [follow the instructions](https://dashboard.ngrok.com/get-started/setup) to run the ngrok binary on any machine outside the cluster. 
+You can extend the minecraft server to anyone on the internet using [ngrok](https://www.ngrok.io). 
 
+  - Create a free acount on ngrok.io
+  - Download the arm64 ngrok binary to the newton (the node that runs minecraft server)
+  - [Follow the instructions](https://dashboard.ngrok.com/get-started/setup) to set the authtoken.
+  - Now run the binary
+  
+```
+./ngrok tcp 30333
+```
 
+This will launch a shell with the tunnel information. Now send this information to the Internet person.
 
+![](/posts/attachments/ngrok_hostname.png)
+
+Refer [this link](https://www.ravbug.com/tutorials/mc-ngrok/) for more information on automating this. 
