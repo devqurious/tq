@@ -25,4 +25,4 @@ ubuntu@newton:~/homecloud/yml$ sudo kubectl logs rpi-container-deployment-7445cf
 2020/12/13 12:16:38 Unix socket /var/run/docker.sock does not exist
 ```
 
-Check [this excellent article](/https://managedkube.com/kubernetes/pod/failure/crashloopbackoff/k8sbot/troubleshooting/2019/02/12/pod-failure-crashloopbackoff.html) out when you run into this case. And you will run into it. 
+Check [this excellent article](https://managedkube.com/kubernetes/pod/failure/crashloopbackoff/k8sbot/troubleshooting/2019/02/12/pod-failure-crashloopbackoff.html) out when you run into this case. And you will run into it. 

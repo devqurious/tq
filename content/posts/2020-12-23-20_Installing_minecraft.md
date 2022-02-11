@@ -93,7 +93,7 @@ helm ls -n minecraft
 If you need to change some of the values in values.yml, do so and then run the following command to update the chart.
 
 ```
-helm upgrade -f minecraft.yml minecraft itzg/minecraft -n minecraft
+helm upgrade -n minecraft minecraft itzg/minecraft -f minecraft.yml
 ```
 
 ## Adding persistence
