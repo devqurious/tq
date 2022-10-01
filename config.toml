@@ -4,6 +4,9 @@ title = "Techqurious"
 theme = "ananke"
 googleAnalytics = "UA-193648113-1"
 
+[markup.goldmark.renderer]
+ unsafe = true
+
 [taxonomies]
     tag = "tags"
     category = "categories"
