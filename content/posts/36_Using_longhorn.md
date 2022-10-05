@@ -33,6 +33,14 @@ spec:
       storage: 20Gi
 ```
 
+Apply and check that the volume claim is successfull. (We are creating the pvc in the monitoring namespace, but you can choose to create in any namespace you want.)
+
+```
+sudo kubectl apply -f longhorn-volv-rsync-pvc.yml -n monitoring
+kubectl get pvc -n monitoring
+```
+
+
 To use this persistent volume claim, update the container...(see the last part)
 
 ```
