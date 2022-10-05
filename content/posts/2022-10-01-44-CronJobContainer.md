@@ -1,6 +1,6 @@
 ---
 title: "Part 44: Cron Script to Cluster"
-date: 2022-02-11
+date: 2022-10-05
 thumb_image: "/posts/attachments/scc.jpg"
 omit_header_text: true
 draft: false
